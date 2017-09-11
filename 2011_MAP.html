@@ -1,0 +1,188 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <script src='2011_About Couples.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #topMenu  {
+    height: 0px; 
+    width: 100%; } 
+#topMenu ul{
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+}
+#topMenu ul li {
+        list-style: none; 
+        color: white;  
+        background-color: #2d2d2d;  
+        line-height: 30px; 
+        margin:0px; width:20%;
+        padding: 0px;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        
+} 
+.topMenuLi {
+    float:left;
+}
+.menuLink {
+        text-decoration:none;   
+        display: block; 
+        width: 250px; 
+        font-size: 12px; 
+        font-weight: bold;  
+        font-family: "Trebuchet MS", Arial;
+        float:left;
+}
+
+.submenulink {
+    text-decoration:none;   
+        display: block; 
+        width: 250px; 
+        font-size: 12px; 
+        font-weight: bold;  
+        font-family: "Trebuchet MS", Arial;
+}
+
+.menuLink{
+        color: white;
+}
+.topMenuLi:hover .menuLink{
+        color:#2d2d2d;
+        background-color: white;
+}
+.submenu{
+        position: absolute;
+        height: 0px; 
+        overflow: hidden; 
+        transition: height .2s;
+        -moz-transition: height .2s;
+        -o-transition: height .2s;
+
+}
+.topMenuLi:hover .submenu{
+        color:#2d2d2d;
+        background-color:white;
+        top:30px;
+        height: 93px;
+}
+.submenulink{
+        color:#2d2d2d;
+        background-color:white;
+        border:solid 1px #2d2d2d;
+        margin-top:-1px;
+}
+.submenulink:hover{
+        color: white; 
+        background-color:#2d2d2d;
+}
+    </style>
+</head>
+<body>
+
+
+<div id='map'>
+</div>
+
+
+
+
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidWtjaG9uZyIsImEiOiJjajdlYWJ6encwbDRhMnJtdDMwYTZmZGlzIn0.PMX27M0beyin-x2evrgpBg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/ukchong/cj6vpcvmp8d862sprsc4lw61v',
+    center: [151.209900, -33.865143],
+    zoom: 8,
+    pitch: 70,
+    bearing: 60
+});
+
+map.on('load', function() {
+
+    map.addLayer({
+        'id': 'room-extrusion',
+        'type': 'fill-extrusion',
+        'source': {
+            // Geojson Data source used in vector tiles, documented at
+            // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            // See the Mapbox Style Spec for details on property functions
+            // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
+            'fill-extrusion-color': {
+                // Get the fill-extrusion-color from the source 'color' property.
+                'property': 'Cp_Tot',
+                "stops":[
+                [0, '#4d4d4d'],
+                [2487, '#52D80E']
+                ]
+                
+            },
+            'fill-extrusion-height': {
+                // Get fill-extrusion-height from the source 'height' property.
+                'property': 'You_Cp_Tot',
+                "stops":[
+                [0.2, 0],
+                [1239, 45000]
+                ]
+            },
+            'fill-extrusion-base': 0,
+            // Make extrusions slightly opaque for see through indoor walls.
+            'fill-extrusion-opacity': 0.6
+        }
+    });
+});
+</script>
+
+<sidebar style="position:absolute; top: 55px; left: 72%; text-align:left;">
+<h1> Colour - Intensity of population in areas </h1>
+<h2> Height - Intensity of population of young couples in areas </h2>
+<p2>These maps graphically portraits
+    how many young couples could afford properties in certain areas of Sydney, .<br>
+    It will show the population of specific groups of generations in Sydney based on 2011 and 2016 census research.<br>
+    You will be able to find the gradual changes between 2011-2016 in different areas by comparing the two maps.<br><br>
+    The result turned out with significant increase of number in purchaing properties amongst younger generation according to the dataset.<br>
+    This could be a positive evidence which proves the partial success of recent policies by government about providing chances of purchasing properties for younger generations and first home buyers.<br>
+   
+
+
+</p2>
+</sidebar>
+
+<nav id="topMenu" > 
+<ul> <li class="topMenuLi"><a class="menuLink" href="HOME.html">HOME</a></li> 
+<li class="topMenuLi"><a class="menuLink" href="QA.html">QA</a></li> 
+<li class="topMenuLi"><a class="menuLink" href="#">Data</a></li>
+<li class="topMenuLi"><a class="menuLink">MAP</a> 
+    <ul class="submenu">
+    <li><a class="submenulink" href="2011_MAP.html">2011</a></li>
+    <li><a class="submenulink" href="2016_MAP.html">2016</a></li>
+    <li><a class="submenulink" href="MAP.html">All</a></li>
+    </ul></li>
+<li class="topMenuLi"><a class="menuLink" href="ABOUT.html">ABOUT</a></li> 
+
+</ul>
+</nav><br>
+
+</body>
+
+ <style>
+        body { margin:0; padding:0; }
+        h1 { font-size:20px; }
+        h2 { font-size: 20px; }
+    #map { position:absolute; top:70px; left:0; bottom:0; width:70%;}
+
+
+    </style>
+</html>
