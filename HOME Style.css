@@ -1,6 +1,7 @@
 body{
 	margin:0; padding:0;
-	background-image: url("Source 1.jpg");
+	background-image: url("Source 2.jpg");
+	background-size: cover;
 	color: white;
 	text-align:center;
 	font-family:Helvetica;
@@ -21,8 +22,9 @@ p{
 
 
 footer {
-	position:fixed;
-	bottom:0;
+	position:relative;
+	top:50%; left: 50%
 	font-size: 12px;
-	padding: 1%;
+	padding: 0.2%;
+	background-color: none
 }

@@ -1,68 +1,59 @@
-
 body{
 	margin:0; padding:0;
+	background-image: url("White and Black.jpg");
+	background-size: cover;
+	background-position: 10%;
 	color: white;
 	text-align:center;
 	font-family:Helvetica;
 	font-size:20px;
 }
 
-
-.Question{
-	background-color: green;
-
-}
-
 .Question h1{		
 		position: absolute;
 		color: black;
-		background-color: green;
-		width: 100%;
-		top: 70px;
-		left: 5%;
-		width:45%;
+		
+		top: 15%;
+		left: 2%;
 		text-align: left;
+		font-size:25px;
 }
 
 .Question p{	
 		position: absolute;
-		background-color: green;
 		color: black;
-		padding: 20px;
-		width: 100%;
-		top: 170px;
-		width:45%;
+		
+		top: 30%;
+		left: 2%;
 		text-align: left;
 		font-size: 15px;
 }
-
-
-
-footer {
-	position:fixed;
-	bottom:0;
-	font-size: 12px;
-	padding: 1%;
-}
-
 .Answer h2{
 		position: absolute;
-		color: white;
-		background-color: blue;
-		width: 45%;
-		top: 70px;
-		left: 50%;
+		color: #C5C5C5;
+		
+		top: 15%;
+		left: 52%;
 		text-align: left;
+		font-size: 25px;
 }
 
 .Answer p{
 		position: absolute;
-		background-color: blue;
-		color: white;
-		width: 45%;
-		top: 170px;
-		left: 50%;
+		color: #C5C5C5;
+		
+		top: 30%;
+		left: 52%;
 		text-align: left;
 		font-size: 15px;
-		padding: 20px;
 }
+
+
+footer {
+	position:fixed;
+	top:80%; left:2%;
+	font-size: 12px;
+	padding: 0.2%;
+	background-color: white
+}
+

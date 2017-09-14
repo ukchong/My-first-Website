@@ -4,12 +4,10 @@
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
-    <script src='2011_About Couples.js'></script>
+    <script src='2011 Young Couple.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-        #topMenu  {
+<style> 
+#topMenu  {
     height: 0px; 
     width: 100%; } 
 #topMenu ul{
@@ -19,10 +17,10 @@
 }
 #topMenu ul li {
         list-style: none; 
-        color: white;  
-        background-color: #2d2d2d;  
+        color: #4d4d4d;  
+        background-color: none;  
         line-height: 30px; 
-        margin:0px; width:20%;
+        margin:0px; width:25%;
         padding: 0px;
         vertical-align: middle;
         text-align: center;
@@ -35,30 +33,31 @@
 .menuLink {
         text-decoration:none;   
         display: block; 
-        width: 250px; 
+        width: 100%; 
         font-size: 12px; 
         font-weight: bold;  
         font-family: "Trebuchet MS", Arial;
         float:left;
 }
 
-.submenulink {
+.submenulink, .submenulink1 {
     text-decoration:none;   
         display: block; 
-        width: 250px; 
+        width: 320px; 
         font-size: 12px; 
         font-weight: bold;  
         font-family: "Trebuchet MS", Arial;
 }
 
 .menuLink{
-        color: white;
+        color: #6d6d6d;
+        background-color: none;
 }
 .topMenuLi:hover .menuLink{
-        color:#2d2d2d;
-        background-color: white;
+        color:white;
+        background-color: none;
 }
-.submenu{
+.submenu, .submenu1{
         position: absolute;
         height: 0px; 
         overflow: hidden; 
@@ -69,21 +68,33 @@
 }
 .topMenuLi:hover .submenu{
         color:#2d2d2d;
-        background-color:white;
+        background-color:none;
         top:30px;
         height: 93px;
 }
-.submenulink{
+.topMenuLi:hover .submenu1{
+        color:#2d2d2d;
+        background-color:none;
+        top:30px;
+        height: 124px;
+}
+.submenulink, .submenulink1{
         color:#2d2d2d;
         background-color:white;
-        border:solid 1px #2d2d2d;
+        
         margin-top:-1px;
+        margin-left: -1.5px;
 }
 .submenulink:hover{
         color: white; 
         background-color:#2d2d2d;
 }
-    </style>
+
+.submenulink1:hover{
+        color: white; 
+        background-color:#2d2d2d;
+ </style>
+
 </head>
 <body>
 
@@ -95,15 +106,16 @@
 
 
 
+
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoidWtjaG9uZyIsImEiOiJjajdlYWJ6encwbDRhMnJtdDMwYTZmZGlzIn0.PMX27M0beyin-x2evrgpBg';
+mapboxgl.accessToken = 'pk.eyJ1IjoidWtjaG9uZyIsImEiOiJjajdrYnV3NDMwbjE2MnFxbjV0ZGh3amNtIn0.B_88ReJwjS0zSWTfkg1K2w';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/ukchong/cj6vpcvmp8d862sprsc4lw61v',
     center: [151.209900, -33.865143],
-    zoom: 8,
-    pitch: 70,
-    bearing: 60
+    zoom: 10,
+    pitch: 80,
+    bearing: 330
 });
 
 map.on('load', function() {
@@ -122,10 +134,10 @@ map.on('load', function() {
             // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
             'fill-extrusion-color': {
                 // Get the fill-extrusion-color from the source 'color' property.
-                'property': 'Cp_Tot',
+                'property': 'Y_Cp_Perce',
                 "stops":[
-                [0, '#4d4d4d'],
-                [2487, '#52D80E']
+                [0.1, 'pink'],
+                [65, '#6B4BD6']
                 ]
                 
             },
@@ -134,41 +146,49 @@ map.on('load', function() {
                 'property': 'You_Cp_Tot',
                 "stops":[
                 [0.2, 0],
-                [1239, 45000]
+                [832, 3000]
                 ]
             },
             'fill-extrusion-base': 0,
             // Make extrusions slightly opaque for see through indoor walls.
-            'fill-extrusion-opacity': 0.6
-        }
-    });
+            'fill-extrusion-opacity': 0.9}
+        });
 });
 </script>
 
-<sidebar style="position:absolute; top: 55px; left: 72%; text-align:left;">
-<h1> Colour - Intensity of population in areas </h1>
-<h2> Height - Intensity of population of young couples in areas </h2>
-<p2>These maps graphically portraits
-    how many young couples could afford properties in certain areas of Sydney, .<br>
-    It will show the population of specific groups of generations in Sydney based on 2011 and 2016 census research.<br>
-    You will be able to find the gradual changes between 2011-2016 in different areas by comparing the two maps.<br><br>
-    The result turned out with significant increase of number in purchaing properties amongst younger generation according to the dataset.<br>
-    This could be a positive evidence which proves the partial success of recent policies by government about providing chances of purchasing properties for younger generations and first home buyers.<br>
+<sidebar style="position:absolute; top: 55px; left: 72%; text-align:left; color:#4d4d4d; background-color: none;">
+<h1> Colour - Intensity of population of young couples amongst all generation in area </h1>
+<h2> Height - Actual Number of young couples in area </h2>
+<p>  This map is generated to graphically convey the study of:
+How many young couples (under 34 years old) could afford properties in which area of Sydney?
+<br>How may young couples (under 34 years old) could afford properties in Sydney? If so, which areas?<br>
+   Census data shows most of young couples tend to live across the train line.
+2016 map portraits that young couples have purchased properties mainly within new development areas.
+Detailed statistics can be accessible from here.
+It will show the population of certain generation in Sydney based on 2011 and 2016 census research.
+You can find the changes between 2011-2016 in different areas by comparing the two maps which created by utilising Census from 2011/2016.<br> Researches about most affordable suburbs can be accessed from <a href="Data.html">here</a>.<br>
+    
+
    
 
 
-</p2>
+</p>
 </sidebar>
 
 <nav id="topMenu" > 
-<ul> <li class="topMenuLi"><a class="menuLink" href="HOME.html">HOME</a></li> 
-<li class="topMenuLi"><a class="menuLink" href="QA.html">QA</a></li> 
-<li class="topMenuLi"><a class="menuLink" href="#">Data</a></li>
+<ul> <li class="topMenuLi"><a class="menuLink" href="INDEX.htmll">HOME</a></li> 
+<li class="topMenuLi"><a class="menuLink">QA</a>
+    <ul class="submenu1">
+    <li><a class="submenulink1" href="QA-Part 1.html">About Data</a></li>
+    <li><a class="submenulink1" href="QA-Part 2.html">Who use it?</a></li>
+    <li><a class="submenulink1" href="QA-Part 3.html">Changes</a></li>
+    <li><a class="submenulink1" href="QA-Part 4.html">Direction</a></li>
+    </ul></li> 
 <li class="topMenuLi"><a class="menuLink">MAP</a> 
     <ul class="submenu">
     <li><a class="submenulink" href="2011_MAP.html">2011</a></li>
     <li><a class="submenulink" href="2016_MAP.html">2016</a></li>
-    <li><a class="submenulink" href="MAP.html">All</a></li>
+    <li><a class="submenulink" href="DATA.html">Data</a></li>
     </ul></li>
 <li class="topMenuLi"><a class="menuLink" href="ABOUT.html">ABOUT</a></li> 
 
@@ -178,11 +198,24 @@ map.on('load', function() {
 </body>
 
  <style>
-        body { margin:0; padding:0; }
-        h1 { font-size:20px; }
-        h2 { font-size: 20px; }
-    #map { position:absolute; top:70px; left:0; bottom:0; width:70%;}
+        body { margin:0px; padding:0; background-color:black;}
+        h1 { font-size:20px; font-family:Helvetica;}
+        h2 { font-size: 20px; font-family:Helvetica;}
+    #map { position:fixed; top:55px; left:0; bottom:0; width:70%;}
 
-
+footer {
+    position:fixed;
+    top:90%; left:0%;
+    font-size: 12px;
+    background-color: white;
+    padding:0.2%;
+}
     </style>
+
+<footer>
+    <a href="https://github.com/ukchong" target="_blank"><img src="github.jpg" border="0" alt="GitHub" width="20px" height="20px"></a>
+<a href="https://www.linkedin.com/in/thumpingrevit/" target="_blank"><img src="linkedin.png" border="0" alt="Linkedin" width="20px" height="20px"></a>
+<a href="https://www.facebook.com/horrednsous8fold" target="_blank"><img src="facebook.png" border="0" alt="Facebook" width="20px" height="20px"></a>
+<a href="https://www.instagram.com/ewan.chongyi/" target="_blank"><img src="insta.png" border="0" alt="Instagram" width="20px" height="20px"></a>
+</footer>
 </html>

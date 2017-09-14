@@ -1,89 +1,24 @@
 body{
-	background: black;
-	color: #4d4d4d;
-	text-align:center;
-	font-family:Helvetica;
-	font-size:14px;
+    margin:0; padding:0;
+    background-color: black;
+    color:#4d4d4d;
+    text-align:center;
+    font-family:Helvetica;
+    font-size:20px;
 }
 
-#topMenu  {
-	height: 0px; 
-	width: 100%; } 
-#topMenu ul{
-		list-style-type: none;
-		margin: 0px;
-		padding: 0px;
+h1, h2{
+	font-size:20px;
 }
-#topMenu ul li {
-		list-style: none; 
-		color: white;  
-		background-color: #2d2d2d;  
-		line-height: 30px; 
-		margin:0px; width:20%;
-		padding: 0px;
-		vertical-align: middle;
-		text-align: center;
-		position: relative;
-		
-} 
-.topMenuLi {
-	float:left;
+p{
+	font-size:12px;
 }
-.menuLink {
-		text-decoration:none;   
-		display: block; 
-		width: 250px; 
-		font-size: 12px; 
-		font-weight: bold;  
-		font-family: "Trebuchet MS", Arial;
-		float:left;
-}
-
-.submenulink {
-	text-decoration:none;   
-		display: block; 
-		width: 250px; 
-		font-size: 12px; 
-		font-weight: bold;  
-		font-family: "Trebuchet MS", Arial;
-}
-
-.menuLink{
-		color: white;
-}
-.topMenuLi:hover .menuLink{
-		color:#2d2d2d;
-		background-color: white;
-}
-.submenu{
-		position: absolute;
-		height: 0px; 
-		overflow: hidden; 
-		transition: height .2s;
-		-moz-transition: height .2s;
-		-o-transition: height .2s;
-
-}
-.topMenuLi:hover .submenu{
-		color:#2d2d2d;
-		background-color:white;
-		top:30px;
-		height: 93px;
-}
-.submenulink{
-		color:#2d2d2d;
-		background-color:white;
-		border:solid 1px #2d2d2d;
-		margin-top:-1px;
-}
-.submenulink:hover{
-		color: white; 
-		background-color:#2d2d2d;
-}
-
 footer {
 	position:fixed;
-	bottom:0;
+	top:21%;
+	left:1%;
 	font-size: 12px;
-	padding: 1%;
+	padding: 0.2%;
+	background-color: white
+
 }
